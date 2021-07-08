@@ -7,11 +7,11 @@ const userControler = require('./src/controllers/user.controller')
 //const addteam2 = require('./src/controllers/team')
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/AppTorneos', { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
+mongoose.connect('mongodb+srv://jrodas:<root>@clustertorneo.r50ca.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
     console.log('Conexion:Correcto');
     userControler.mainStart();
 
-    app.listen(3000, function () {
+    app.listen(process.env.PORT || 3000, function () {
 
         console.log('Servidor:Correcto')
        // addteam2.addTeam()
